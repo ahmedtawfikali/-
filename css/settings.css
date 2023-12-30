@@ -1,0 +1,576 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Cairo:wght@400;600;1000&family=Noto+Kufi+Arabic:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    transition: var(--transition);
+}
+::placeholder
+{
+    opacity: 1;
+    color: var(--color);
+    font-size: .7rem;
+}
+:root
+{
+    --bg-color: aliceblue;
+    --items: #fe748d;
+    --font-family-acme: 'Acme', sans-serif;
+    --font-family-cairo: 'Cairo', sans-serif;
+    --font-family-noto: 'Noto Kufi Arabic', sans-serif;
+    --font-weight: 900;
+    --color: #f9237d;
+    --logo: #b386ae;
+    --transition: all .3s ease-in-out;
+    --antique: antiquewhite;
+    --shadow: #000;
+    --border: #ffbad0;
+}
+html
+{
+    font-size: 16px;
+}
+body
+{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 60px 1fr;
+    padding: 5px;
+    height: 100vh;
+    background-color: var(--bg-color);
+    font-family: var(--font-family-acme);
+    font-weight: var(--font-weight);
+    color: var(--color);
+    letter-spacing: 2px;
+    overflow: hidden !important;
+}
+header
+{
+    background-color: var(--items);
+    grid-column: 1/-1;
+    grid-row: 1/2;
+}
+aside
+{
+    background-color: var(--items);
+    grid-column: 10/-1;
+    grid-row: 2/-1;
+}
+main
+{
+    background-color: transparent;
+    grid-column: 1/10;
+    grid-row: 2/-1;
+}
+/*header Content*/
+header > i#menu
+{
+    display: none;
+}
+header > ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+header > ul > li
+{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 60px;
+}
+header > ul > li > a
+{
+    color: var(--bg-color);
+    font-size: 3rem;
+}
+
+/* // header Content*/
+/*this is for aside content Lists*/
+
+aside
+{
+    display: flex;
+}
+aside > ul
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+aside > ul > li:first-child
+{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+aside > ul > li:first-child > a
+{
+    color: var(--bg-color);
+    font-size: 3rem;
+}
+aside > ul > li:first-child:hover
+{
+    background-color: transparent;
+}
+aside > ul > li:first-child:hover > a
+{
+    color: var(--bg-color);
+}
+
+aside > ul > li:last-child
+{
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: auto;
+    padding: 0 5px;
+}
+aside > ul > li:last-child > a
+{
+    color: var(--bg-color);
+    font-size: .7rem;
+}
+aside > ul > li:last-child:hover
+{
+    background-color: transparent;
+}
+aside > ul > li:last-child:hover > a
+{
+    color: var(--bg-color);
+}
+aside > ul > li
+{
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+    line-height: 40px;
+    cursor: pointer;
+}
+aside > ul > li > a
+{
+    color: var(--bg-color);
+}
+
+aside > ul > li:hover > a
+{
+    color: var(--color);
+}
+aside > ul > li:hover
+{
+    background-color: var(--bg-color);
+}
+
+/* // this is for aside content Lists*/
+
+/*this is for main content Forms*/
+
+main
+{
+    display: flex;
+    gap: 20px;
+}
+section
+{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+#form , #all-members
+{
+    display: none;
+}
+#find-request
+{
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+main > section#find-request > div
+{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    overflow: hidden !important;
+    position: relative;
+}
+main > section#find-request > div > img
+{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+}
+main > section#find-request > div > h2
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: var(--color);
+    background-color: transparent;
+}
+
+section#form > div
+{
+    flex-direction: column;
+}
+section#form > div > h2
+{
+    color: var(--bg-color);
+}
+main > section#find-request > form
+{
+    width: 70%;
+    height: 200px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+main > section#find-request > form > input
+{
+    width: 70%;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid var(--color);
+    font-size: 1rem;
+    color: var(--color);
+    margin-bottom: 20px;
+}
+main > section#find-request > form > input[type="submit"]
+{
+    font-weight: 900;
+    cursor: pointer;
+}
+main > section#find-request > form > input[type="submit"]:hover
+{
+    background-color: var(--color);
+    color: var(--bg-color);
+}
+main > section#find-request > div
+{
+    width: 70%;
+    height: 70%;
+    background-color: var(--border);
+}
+main > section#form > div
+{
+    background-color: var(--color);
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    position: relative;
+}
+main > section#members > div
+{
+    background-color: var(--color);
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-y: auto;
+    position: relative;
+}
+
+main > section#members > div > table
+{
+    position: absolute;
+    width: 100%;
+}
+th#all_member
+{
+    width: 100%;
+}
+tr
+{
+    width: 100%;
+    height: 60px;
+    background-color: var(--bg-color);
+}
+tr > td:first-child , td:last-child , td:nth-child(4)
+{
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+}
+tr > td> a > i
+{
+    color: var(--color);
+    font-size: 1.2rem;
+}
+td
+{
+    padding-left: 10px;
+}
+
+
+
+main > section > div > h2{
+
+    width: 80%;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+main > section > div > form
+{
+    width: 80%;
+    height: 80%;
+    background-color: var(--color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+main > section > div > form > label
+{
+    width: 80%;
+    padding: 10px;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    gap: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+main > section > div > form > select
+{
+    width: 80%;
+    padding: 10px;
+    background-color: var(--bg-color);
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    color: var(--color);
+    font-size: 1rem;
+    font-weight: 900;
+}
+main > section > div > form > input
+{
+    width: 80%;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: var(--color);
+    margin-bottom: 20px;
+}
+input[type="file"]
+{
+    display: none;
+}
+
+main > section > div > form > textarea
+{
+    width: 80%;
+    height: 40%;
+    resize: none;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+main > section > div > form > input[type="submit"]
+{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid transparent;
+    font-weight: 900;
+    color: var(--color);
+    cursor: pointer;
+}
+main > section > div > form > input[type="submit"]:hover
+{
+    background-color: transparent;
+    border: 2px solid var(--bg-color);
+    color: var(--bg-color);
+}
+/* // this is for main content Forms*/
+
+/* this is for screen with smaller than 1024px*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    header > ul > li > a
+    {
+        font-size: 2rem;
+    }
+    aside > ul > li:first-child  > a
+    {
+        font-size: 2rem;
+    }
+
+    main
+    {
+        grid-column: 1/8;
+    }
+    aside
+    {
+        grid-column: 8/-1;
+    }
+    aside > ul > li:last-child
+    {
+        display: none;
+    }
+    main > section > div
+    {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    main > section#members > div
+    {
+        overflow-y: auto;
+    }
+    main > section#find-request > div
+    {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+    }
+    main > section#find-request > form
+    {
+        width: 100%;
+    }
+
+
+}
+
+/* // this is for screen with smaller than 1024px*/
+
+/* this is for screen with smaller than 768px*/
+
+@media (max-width: 768px){
+
+    header > ul > li > a
+    {
+        font-size: 2rem;
+    }
+    header > ul > li > a > span
+    {
+        display: none;
+    }
+    header
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    header > i#menu
+    {
+        display: block;
+        font-size: 2rem;
+        position: fixed;
+        right: 20px;
+        cursor: pointer;
+    }
+    aside#aside
+    {
+        grid-column: 1/-1;
+        z-index: 200;
+        display: none;
+    }
+    header > ul > li > a
+    {
+        font-size: 2rem;
+    }
+    aside > ul > li:first-child  > a
+    {
+        font-size: 2rem;
+    }
+    main#main
+    {
+        grid-column: 1/-1;
+    }
+    main > section > div
+    {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        overflow-y: auto;
+    }
+    main > section#members > div
+    {
+        height: 1000%;
+    }
+    main > section > div > form
+    {
+        width: 100%;
+    }
+
+    main > section#find-request > div
+    {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+    }
+    main > section#find-request > form
+    {
+        width: 100%;
+    }
+    main > section#find-request > form > input
+    {
+        width: 100%;
+        padding: 10px;
+    }
+
+}
+
+/* // this is for screen with smaller than 768px*/

@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Cairo:wght@400;600;1000&family=Noto+Kufi+Arabic:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+:root
+{
+    --bg-color: aliceblue;
+    --items: #fe748d;
+    --font-family-acme: 'Acme', sans-serif;
+    --font-family-cairo: 'Cairo', sans-serif;
+    --font-family-noto: 'Noto Kufi Arabic', sans-serif;
+    --font-weight: 900;
+    --color: #f9237d;
+    --logo: #b386ae;
+    --transition: all .3s ease-in-out;
+    --transition-card: all 1s ease-in-out;
+    --antique: antiquewhite;
+    --shadow: #000;
+    --border: #ffbad0;
+}
+html
+{
+    font-size: 16px;
+}
+body
+{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 300px 1fr;
+    padding: 5px;
+    height: 100vh;
+    background-color: var(--bg-color);
+    font-family: var(--font-family-acme);
+    font-weight: var(--font-weight);
+    overflow: hidden !important;
+    gap: 10px;
+}
+header ,  section  , main
+{
+    background-color: var(--items);
+}
+section
+{
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    display: grid;
+    place-items: center;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    overflow: hidden !important;
+    padding: 10px;
+    position: relative;
+}
+section > strong
+{
+    position: absolute;
+    font-size: 5rem;
+}
+section > img
+{
+    position: absolute;
+    width: 100%;
+    height: 300px;
+}
+main
+{
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+    overflow-y: scroll;
+    padding: 10px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+main > div.container
+{
+    width: 500px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    overflow: hidden !important;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 500px;
+    transform-style: preserve-3d;
+}
+
+main > div.container > div
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    backface-visibility: hidden;
+    transition: var(--transition-card);
+}
+main > div.container > div.box-2
+{
+    transform: rotateY(-180deg);
+    padding: 10px;
+}
+p.explains
+{
+    color: var(--bg-color);
+}
+p.explains::first-letter
+{
+    font-size: 2rem;
+    padding: 5px;
+    color: var(--color);
+}
+main > div.container > div > img
+{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+h2.blogger
+{
+    width: 100%;
+    height: 40px;
+    z-index: 3;
+    text-align: center;
+    line-height: 40px;
+    background-color: var(--color);
+    color: var(--bg-color);
+    text-transform: capitalize;
+    font-family: var(--font-family-acme);
+}
+main > div.container:hover > div.box-1
+{
+    transform: rotateY(180deg);
+}
+main > div.container:hover > div.box-2
+{
+    transform: rotateY(0deg);
+}
+@media (min-width: 478px) and (max-width: 1024px){
+
+    section > strong
+    {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    body
+    {
+        grid-template-rows: 200px 1fr;
+    }
+    div.container
+    {
+        flex: 1 1 300px;
+    }
+    div.container:last-child
+    {
+        flex: 0 0 300px;
+    }
+
+}
+@media (max-width: 478px){
+
+    section > strong
+    {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    body
+    {
+        grid-template-rows: 200px 1fr;
+    }
+    div.container:last-child
+    {
+        flex: 1 0 300px;
+    }
+    div.container
+    {
+        margin-bottom: 20px;
+    }
+
+}
